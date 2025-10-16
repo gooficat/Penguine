@@ -16,6 +16,9 @@
     <Filter Include="Header Files\Penguine">
       <UniqueIdentifier>{a86f890c-d7aa-498c-b167-601164345a0d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Penguine\Usables">
+      <UniqueIdentifier>{1ab8655a-19a1-40b9-8b00-69b2c88b2f50}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="App.cpp">
@@ -34,6 +37,21 @@
     </ClInclude>
     <ClInclude Include="Main.h">
       <Filter>Header Files\Penguine</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Header Files\Penguine</Filter>
+    </ClInclude>
+    <ClInclude Include="Event.h">
+      <Filter>Header Files\Penguine</Filter>
+    </ClInclude>
+    <ClInclude Include="Vec.h">
+      <Filter>Header Files\Penguine\Usables</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Penguine\Usables</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>Header Files\Penguine\Usables</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

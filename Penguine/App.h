@@ -1,6 +1,8 @@
 #pragma once
 
 #include "Api.h"
+#include "Log.h"
+#include "Scene.h"
 
 namespace Penguine {
 	class PENGUINE_API App
@@ -10,6 +12,9 @@ namespace Penguine {
 		virtual compl App();
 
 		void Run();
+	private:
+		Logger* Logger;
+		
 	};
 
 	App* CreateApp();

@@ -1,4 +1,8 @@
-# Prerequisites
+# User config folders
+.vs/
+x64/
+
+#Prerequisites
 *.d
 
 # Compiled Object files

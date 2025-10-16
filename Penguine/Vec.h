@@ -8,5 +8,6 @@ struct Vec
 };
 
 struct PENGUINE_API Vec2 : public Vec {
-	
+	float x;
+	float y;
 };

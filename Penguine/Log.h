@@ -54,16 +54,16 @@ namespace Penguine {
 
 			std::string type_str;
 			switch (type) {
-			case Info:
+			case LogType::Info:
 				type_str = "INFO";
 				break;
-			case Warn:
+			case LogType::Warn:
 				type_str = "WARN";
 				break;
-			case Error:
+			case LogType::Error:
 				type_str = "ERROR";
 				break;
-			case Critical:
+			case LogType::Critical:
 				type_str = "CRITICAL";
 				break;
 			}

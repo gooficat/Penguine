@@ -53,5 +53,8 @@
     <ClInclude Include="Node.h">
       <Filter>Header Files\Penguine\Usables</Filter>
     </ClInclude>
+    <ClInclude Include="Window.h">
+      <Filter>Header Files\Penguine</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,7 +2,7 @@
 
 class TestApp : public Penguine::App {
 public:
-	TestApp() {
+	TestApp() : App(640, 320, "Test App") {
 
 	}
 	compl TestApp() {

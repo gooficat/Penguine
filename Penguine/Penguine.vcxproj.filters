@@ -24,6 +24,9 @@
     <ClCompile Include="App.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Event.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Penguine.h">
@@ -54,6 +57,9 @@
       <Filter>Header Files\Penguine\Usables</Filter>
     </ClInclude>
     <ClInclude Include="Window.h">
+      <Filter>Header Files\Penguine</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalWindow.h">
       <Filter>Header Files\Penguine</Filter>
     </ClInclude>
   </ItemGroup>

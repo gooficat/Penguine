@@ -1,11 +1,14 @@
 #pragma once
 
 #include "Api.h"
-
 #include "Vec.h"
 
+#include "InternalWindow.h"
+
+#include <Windows.h>
+
 namespace Penguine {
-	enum class KeyCode {
+	enum class PENGUINE_API KeyCode {
 		LMB = 0x01,
 		RMB,
 		MMB = 0x04,
@@ -46,14 +49,31 @@ namespace Penguine {
 		Y,
 		Z,
 	};
+
+	enum EventType : UINT {
+		WindowResize = WM_SIZE,
+		WindowClose = WM_QUIT,
+		Terminate = WM_DESTROY,
+		RequestDraw = WM_PAINT
+	};
+
+	class EventInformation {
+	public:
+		WPARAM w_param;
+		LPARAM l_param;
+	};
+
 	class PENGUINE_API EventHandler {
 	public:
 		bool IsKeyDown(KeyCode key) {
 			// implement as per winapi or whatever platform
+			return false;
 		}
 		Vec2 GetMousePos() {
 			// implement as per winapi or whatever platform
+			return Vec2();
 		}
+		static LRESULT CALLBACK ProcessEvent(InternalWindow internal_window, EventType type, EventInformation info);
 	private:
 	};
 };

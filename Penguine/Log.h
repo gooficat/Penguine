@@ -20,7 +20,7 @@ namespace Penguine {
 		Critical
 	};
 
-	class Logger
+	class PENGUINE_API Logger
 	{
 	public:
 		Logger() {
@@ -43,7 +43,7 @@ namespace Penguine {
 				logFile.close();
 			}
 		}
-		void Log(LogType type, const std::string& message) {
+		void Log(LogType type, const std::string& message, bool console_only = false) {
 			time_t current_time = std::time(nullptr);
 			//tm* time_info = nullptr;
 			//localtime_s(time_info, &current_time);
@@ -71,6 +71,10 @@ namespace Penguine {
 			entry << "TIME [" << current_time << "] " << type_str << " : " << message << std::endl;
 
 			std::cout << entry.str() << std::endl;
+		
+			if (console_only) {
+				return;
+			}
 
 			if (logFile.is_open()) {
 				logFile << entry.str();

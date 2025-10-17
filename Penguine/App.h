@@ -11,13 +11,19 @@ namespace Penguine {
 	public:
 		inline static App *app_instance;
 
-		App(uint16_t width, uint16_t height, const std::string& name);
+		App(const std::string& name, const uint16_t width, const uint16_t height);
 		virtual compl App();
 
 		void Run();
 
-	protected:
+
+		void RequestDraw(InternalWindow& internal_window, const EventInformation& info);
+
+		void OnWindowResize(InternalWindow& internal_window, const EventInformation& info);
+		void RequestTermination(InternalWindow& internal_window, const EventInformation& info);
+
 		Logger* Logger;
+	protected:
 
 	private:
 		

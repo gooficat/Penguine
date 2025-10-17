@@ -5,3 +5,5 @@
 #else
 	#define PENGUINE_API __declspec(dllimport)
 #endif
+
+#define EventReturn LRESULT CALLBACK

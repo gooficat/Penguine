@@ -1,4 +1,5 @@
-#pragma once
+#ifndef APP_H
+#define APP_H
 
 #include "global.h"
 
@@ -10,10 +11,12 @@ public:
     App();
     ~App();
     void run();
+    // static App *active_instance;
 protected:
     Window *window;
     EventHandler *event_handler;
 private:
     uint16_t width, height;
-    static App *active_instance;
 };
+
+#endif

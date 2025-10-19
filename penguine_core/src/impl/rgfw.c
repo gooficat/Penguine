@@ -1,3 +1,3 @@
-// #define RGFW_IMPLEMENTATION
-// #define RGFW_OPENGL
-// #include "lib/RGFW.h"
+#define RGFW_IMPLEMENTATION
+#define RGFW_EXPORT
+#include "lib/RGFW.h"

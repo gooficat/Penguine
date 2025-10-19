@@ -1,4 +1,5 @@
-#pragma once
+#ifndef WINDOW_H
+#define WINDOW_H
 
 #include "global.h"
 
@@ -15,3 +16,5 @@ private:
     uint16_t height;
     static Window *active_instance;
 };
+
+#endif

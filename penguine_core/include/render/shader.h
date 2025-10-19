@@ -1,4 +1,5 @@
-#pragma once
+#ifndef SHADER_H
+#define SHADER_H
 
 #include "global.h"
 #include "resource.h"
@@ -16,6 +17,8 @@ struct ShaderResource : public Resource {
     GLuint GetID();
 private:
     GLuint ID;
+    std::string path;
+    ShaderType type;
 };
 
 class ShaderProgram {
@@ -23,3 +26,5 @@ public:
     ShaderProgram();
 private:
 };
+
+#endif

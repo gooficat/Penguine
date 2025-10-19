@@ -1,7 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"C:/Projects/Penguine/penguine_core/out/build/penguine_core/cmake_install.cmake"
-	],
-	"Parallel" : false
-}

@@ -1,3 +1,0 @@
-C:/Projects/Penguine/penguine_core/out/build/penguine_core/CMakeFiles/penguine_core.dir
-C:/Projects/Penguine/penguine_core/out/build/penguine_core/CMakeFiles/ALL_BUILD.dir
-C:/Projects/Penguine/penguine_core/out/build/penguine_core/CMakeFiles/ZERO_CHECK.dir

@@ -1,4 +1,5 @@
-#pragma once
+#ifndef CAMERA_H
+#define CAMERA_H
 
 #include "global.h"
 
@@ -7,3 +8,5 @@ public:
 
 private:
 };
+
+#endif

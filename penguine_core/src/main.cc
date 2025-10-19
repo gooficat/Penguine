@@ -1,7 +1,21 @@
-#include <iostream>
+#include "app.h"
+
+class TestApp : public App {
+public:
+  TestApp() : App() {
+
+  }
+
+
+private:
+};
 
 int main(void)
 {
-  std::cout << "Let'sago!" << std::endl;
+  auto *app = new TestApp();
+
+  app->run();
+
+  
   return 0;
 }

@@ -11,7 +11,7 @@ public:
     App();
     ~App();
     void run();
-    // static App *active_instance;
+    inline static App *active_instance;
 protected:
     Window *window;
     EventHandler *event_handler;

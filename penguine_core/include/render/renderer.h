@@ -15,7 +15,7 @@ public:
 
     void setSize(uint16_t left, uint16_t right, uint16_t up, uint16_t down);
 private:
-    GLFWwindow *context_window;
+    RGFW_window *context_window;
 };
 
 #endif

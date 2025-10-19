@@ -4,9 +4,9 @@
 void Renderer::init(Window *window) {
     this->context_window = window->getInternalWindow();
     // RGFW_window_createContext_OpenGL(context_window, window->getHints());
-    glfwMakeContextCurrent(context_window);
+    RGFW_window_makeCurrentContext_OpenGL(context_window);
     // RGFW_window_swapInterval_OpenGL(context_window, 0);
-    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
+    if (!gladLoadGL(RGFW_getProcAddress_OpenGL)) {
         std::cerr << "Failed to load OpenGL" << std::endl;
     }
     setSize(0, window->getWidth(), 0, window->getHeight());
@@ -18,7 +18,7 @@ void Renderer::beginDraw() {
 }
 
 void Renderer::endDraw() {
-    glfwSwapBuffers(context_window);
+    RGFW_window_swapBuffers_OpenGL(context_window);
 }
 
 void Renderer::setSize(uint16_t left, uint16_t right, uint16_t up, uint16_t down) {

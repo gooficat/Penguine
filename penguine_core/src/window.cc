@@ -7,22 +7,15 @@ void Window::init() {
     this->width = 640;
     this->height = 360;
 
-    if (!glfwInit()) {
-        std::cerr << "glfw failed to launch!" << std::endl;
-    }
+    this->hints = RGFW_getGlobalHints_OpenGL();
+    hints->major = 3;
+    hints->minor = 3;
+    RGFW_setGlobalHints_OpenGL(this->hints);
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-
-    this->window = glfwCreateWindow(
-        width, height, "",
-        NULL, NULL // should add resizing later, but it's a pain
+    this->window = RGFW_createWindow(
+        "", 0, 0, width, height, 
+        RGFW_windowAllowDND | RGFW_windowCenter | RGFW_windowNoResize | RGFW_windowOpenGL // should add resizing later, but it's
     );
-
-    if (!window) {
-        std::cerr << "window failed to initialize" << std::endl;
-    }
 }
 uint16_t Window::getWidth() const {
     return this->width;
@@ -30,12 +23,14 @@ uint16_t Window::getWidth() const {
 uint16_t Window::getHeight() const {
     return this->height;
 }
-GLFWwindow *Window::getInternalWindow() {
+RGFW_window *Window::getInternalWindow() {
     return this->window;
 }
 
+RGFW_glHints *Window::getHints() {
+    return this->hints;
+}
 
 Window *Window::getActiveInstance() {
-    // return Window::active_instance;
-    return this;
+    return this;// haha goteem Window::active_instance;
 }

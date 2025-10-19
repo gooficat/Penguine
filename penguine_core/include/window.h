@@ -4,15 +4,17 @@
 
 class Window {
 public:
+    // static Window *active_instance;
     Window();
     void init();
     uint16_t getWidth() const;
     uint16_t getHeight() const;
-    GLFWwindow *getInternalWindow();
+    RGFW_window *getInternalWindow();
     Window *getActiveInstance();
-    // static Window *active_instance;
+    RGFW_glHints *getHints();
 private:
-    GLFWwindow *window;
+    RGFW_window *window;
+    RGFW_glHints *hints;
     uint16_t width;
     uint16_t height;
 };

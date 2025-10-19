@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.10)
 project(penguine_core)
 enable_language(CXX)
+enable_language(C)
 set(CMAKE_CXX_STANDARD 17) # this is probably arbitrary here, i'm not sure what standard i actually use
+set(CMAKE_C_STANDARD 17)
 
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(include)
@@ -25,7 +27,7 @@ add_executable(penguine_core
 
 
     src/impl/glad.c
-
+    src/impl/rgfw.c
 )
 
 target_link_directories(penguine_core
@@ -35,7 +37,8 @@ target_link_directories(penguine_core
 
 target_link_libraries(penguine_core
     opengl32
-    glfw3
+    # glfw3
+    gdi32
 )
 
 set(CMAKE_BUILD_TYPE Debug)

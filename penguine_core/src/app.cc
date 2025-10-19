@@ -21,7 +21,7 @@ void App::changeScene(const std::string& name) {
 void App::run() {
     window->init();
     renderer->init(window);
-    while (!glfwWindowShouldClose(window->getInternalWindow())) { // scary i know
+    while (!RGFW_window_shouldClose(window->getInternalWindow())) { // scary i know
         renderer->beginDraw();
 
         this->scenes.at(active_scene)->draw();

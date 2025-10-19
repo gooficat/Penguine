@@ -12,8 +12,8 @@ public:
 
     void update();
 
-    double mouse_x;
-    double mouse_y;
+    float mouse_x;
+    float mouse_y;
 private:
     Window *active_window;
     // glfwEvent event;

@@ -17,7 +17,7 @@ std::string Resource::loadTextFile(const std::string& path) {
    std::ifstream file(path);
    if (file.is_open() == false) {
       std::cerr << "Bingle bongle: " << path << std::endl;
-      return nullptr;
+      return "Bingle Bongle dingle dangle";
    }
    std::string line;
    std::string content;

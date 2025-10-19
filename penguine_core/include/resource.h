@@ -5,13 +5,13 @@
 
 struct Resource {
     Resource(const std::string& path);
-    virtual void Load();
+    virtual void load();
     virtual ~Resource();
 
-    static std::string LoadTextFile(const std::string& path);
+    static std::string loadTextFile(const std::string& path);
 
     template <typename T>
-    static T LoadBinaryFile(const std::string& path);
+    static T loadBinaryFile(const std::string& path);
 };
 
 #endif

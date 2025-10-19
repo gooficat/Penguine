@@ -8,9 +8,9 @@
 class EventHandler {
 public:
     EventHandler();
-    bool IsKeyDown(uint8_t key);
+    bool isKeyDown(uint8_t key);
 
-    void Update();
+    void update();
 
     float mouse_x;
     float mouse_y;

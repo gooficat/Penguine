@@ -6,14 +6,14 @@
 Resource::Resource(const std::string& path) {
 
 }
-void Resource::Load() {
+void Resource::load() {
 
 }
 Resource::~Resource() {
 
 }
 
-std::string Resource::LoadTextFile(const std::string& path) {
+std::string Resource::loadTextFile(const std::string& path) {
     std::ifstream file(path);
 
     if (!file.is_open()) {
@@ -32,6 +32,6 @@ std::string Resource::LoadTextFile(const std::string& path) {
 }
 
 template <typename T>
-T Resource::LoadBinaryFile(const std::string& path) {
+T Resource::loadBinaryFile(const std::string& path) {
     // to be implemented (if i even need it)
 }

@@ -6,6 +6,8 @@
 #include "window.h"
 #include "event.h"
 
+#include "render/renderer.h"
+
 class App {
 public:
     App();
@@ -15,6 +17,7 @@ public:
 protected:
     Window *window;
     EventHandler *event_handler;
+    Renderer *renderer;
 private:
     uint16_t width, height;
 };

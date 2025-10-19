@@ -20,17 +20,17 @@ ShaderResource::~ShaderResource() {
     glDeleteShader(this->ID);
 }
 
-GLuint ShaderResource::getID() {
+GLuint ShaderResource::getID() const {
     return this->ID;
 }
 
-ShaderProgram::ShaderProgram(const std::vector<const ShaderResource&>& shaders) {
+ShaderProgram::ShaderProgram(const ShaderResource& vertex_shader, const ShaderResource& fragment_shader) {
     this->ID = glCreateProgram();
     glUseProgram(this->ID);
 
-    for (auto& shader : shaders) {
-        glAttachShader(this->ID, shader.getID());
-    }
+    glAttachShader(this->ID, vertex_shader.getID());
+    glAttachShader(this->ID, fragment_shader.getID());
+
     glLinkProgram(this->ID);
 }
 

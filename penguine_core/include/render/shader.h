@@ -14,7 +14,7 @@ struct ShaderResource : public Resource {
     ShaderResource(const std::string& path, const ShaderType& type);
     void load();
     ~ShaderResource();
-    GLuint getID();
+    GLuint getID() const;
 private:
     GLuint ID;
     std::string path;
@@ -23,7 +23,7 @@ private:
 
 class ShaderProgram {
 public:
-    ShaderProgram(const std::vector<const ShaderResource&>& shaders);
+    ShaderProgram(const ShaderResource& vertex_shader, const ShaderResource& fragment_shader);
     
     void use() const;
 

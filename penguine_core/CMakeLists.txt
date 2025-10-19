@@ -6,9 +6,6 @@ set(CMAKE_CXX_STANDARD 17) # this is probably arbitrary here, i'm not sure what 
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(include)
 
-# add_compile_definitions(RGFW_IMPLEMENTATION)
-add_compile_definitions(RGFW_OPENGL)
-add_compile_definitions(LINALG_FORWARD_COMPATIBLE)
 
 add_executable(penguine_core
     src/impl/glad.c
@@ -22,6 +19,7 @@ add_executable(penguine_core
     src/window.cc
     src/resource.cc
 
+    src/render/renderer.cc
     src/render/shader.cc
 )
 
@@ -30,3 +28,6 @@ target_link_libraries(penguine_core
     opengl32
     gdi32
 )
+
+set(CMAKE_BUILD_TYPE Debug)
+set(CMAKE_CXX_FLAGS "-O0")

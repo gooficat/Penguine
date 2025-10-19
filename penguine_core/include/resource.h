@@ -12,6 +12,8 @@ struct Resource {
 
     template <typename T>
     static T loadBinaryFile(const std::string& path);
+
+    std::string path;
 };
 
 #endif

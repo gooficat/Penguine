@@ -5,6 +5,8 @@ App::App() {
     this->event_handler = new EventHandler(window);
     this->renderer = new Renderer();
     App::active_instance = this;
+    window->init();
+    renderer->init(window); // i am so infuriated right now i am so infuriated
 }
 
 void App::changeScene(const std::string& name) {

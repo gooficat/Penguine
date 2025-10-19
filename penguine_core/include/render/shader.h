@@ -17,7 +17,6 @@ struct ShaderResource : public Resource {
     GLuint getID() const;
     GLuint ID;
 private:
-    std::string path;
     ShaderType type;
 };
 

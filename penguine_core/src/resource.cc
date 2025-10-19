@@ -3,7 +3,7 @@
 #include <sstream>
 #include <fstream>
 
-Resource::Resource(const std::string& path) {
+Resource::Resource(const std::string& path) : path(path) {
 
 }
 void Resource::load() {

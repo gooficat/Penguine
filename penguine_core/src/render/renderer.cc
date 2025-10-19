@@ -6,7 +6,7 @@ void Renderer::init(Window *window) {
     // RGFW_window_createContext_OpenGL(context_window, window->getHints());
     glfwMakeContextCurrent(context_window);
     // RGFW_window_swapInterval_OpenGL(context_window, 0);
-    if (!gladLoadGL((GLADloadfunc)glfwGetProcAddress)) {
+    if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
         std::cerr << "Failed to load OpenGL" << std::endl;
     }
     setSize(0, window->getWidth(), 0, window->getHeight());

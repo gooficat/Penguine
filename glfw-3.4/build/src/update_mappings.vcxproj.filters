@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Projects\Penguine\glfw-3.4\build\CMakeFiles\7de83d6b0aeb0330f3700801cecef88c\update_mappings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="C:\Projects\Penguine\glfw-3.4\src\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="C:\Projects\Penguine\glfw-3.4\src\mappings.h.in">
+      <Filter>Header Files</Filter>
+    </None>
+    <None Include="C:\Projects\Penguine\glfw-3.4\CMake\GenerateMappings.cmake" />
+    <None Include="C:\Projects\Penguine\glfw-3.4\build\src\CMakeFiles\update_mappings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{F20A680A-EB05-3ABA-A0D5-17F79AD0A568}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{5A602D00-36F6-3F74-8733-6F8AE9472D73}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

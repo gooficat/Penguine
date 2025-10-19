@@ -14,21 +14,18 @@ Resource::~Resource() {
 }
 
 std::string Resource::loadTextFile(const std::string& path) {
-    std::ifstream file(path);
-
-    if (!file.is_open()) {
-        std::cerr << "Failed to open file!" << std::endl; // this should probably be swapped for some sort of logging with termination implemented
-        return "Bingle Bongle";
-    }
-
-    std::string content;
-
-    std::string line;
-    while (std::getline(file, line)) {
-        content.append(line);
-    }
-
-    return content;
+   std::ifstream file(path);
+   if (file.is_open() == false) {
+      std::cerr << "Bingle bongle: " << path << std::endl;
+      return nullptr;
+   }
+   std::string line;
+   std::string content;
+   while (std::getline(file, line)) {
+      content += line + "\n";
+   }
+   file.close();
+   return content;
 }
 
 template <typename T>

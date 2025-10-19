@@ -1,10 +1,13 @@
 #ifndef GLOBAL_H
 #define GLOBAL_H
 
+// #include "lib/glad/gl.h"
+
 #include "lib/glad/gl.h"
 
-#define RGFW_OPENGL
-#include "lib/RGFW.h"
+// #pragma comment(lib, "lib/glfw3.lib") // now that is disgusting
+#include "lib/glfw3.h"
+
 
 #define LINALG_FORWARD_COMPATIBLE
 #include "lib/linalg.h"
@@ -15,6 +18,8 @@ using namespace linalg::aliases; // woo dangerous!
 #include <cstring>
 #include <iostream>
 #include <map>
+#include <memory>
+#include <cmath>
 
 using std::int8_t;
 using std::int16_t;

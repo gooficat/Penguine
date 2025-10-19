@@ -7,15 +7,16 @@
 
 class EventHandler {
 public:
-    EventHandler();
+    EventHandler(Window *window);
     bool isKeyDown(uint8_t key);
 
     void update();
 
-    float mouse_x;
-    float mouse_y;
+    double mouse_x;
+    double mouse_y;
 private:
-    RGFW_event event;
+    Window *active_window;
+    // glfwEvent event;
 };
 
 #endif

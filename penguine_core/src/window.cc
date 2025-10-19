@@ -1,18 +1,22 @@
 #include "window.h"
 
 Window::Window() {
-
+    // Window::active_instance = this;
 }
 void Window::init() {
     this->width = 640;
     this->height = 360;
-    this->window = RGFW_createWindow(
-        "", 0, 0, width, height, 
-        RGFW_windowCenter | RGFW_windowNoResize | RGFW_windowOpenGL
+
+    glfwInit();
+
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+
+    this->window = glfwCreateWindow(
+        width, height, "",
+        NULL, NULL // should add resizing later, but it's a pain
     );
-    this->hints = new RGFW_glHints();
-    hints->major = 3;
-    hints->minor = 3;
 }
 uint16_t Window::getWidth() const {
     return this->width;
@@ -20,10 +24,12 @@ uint16_t Window::getWidth() const {
 uint16_t Window::getHeight() const {
     return this->height;
 }
-RGFW_window *Window::getInternalWindow() {
+GLFWwindow *Window::getInternalWindow() {
     return this->window;
 }
 
-RGFW_glHints *Window::getHints() {
-    return this->hints;
+
+Window *Window::getActiveInstance() {
+    // return Window::active_instance;
+    return this;
 }

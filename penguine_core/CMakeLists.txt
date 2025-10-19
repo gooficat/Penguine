@@ -6,28 +6,36 @@ set(CMAKE_CXX_STANDARD 17) # this is probably arbitrary here, i'm not sure what 
 include_directories(${CMAKE_SOURCE_DIR})
 include_directories(include)
 
+# file(GLOB_RECURSE SRCS CONFIGURE_DEPENDS "src/*")
 
 add_executable(penguine_core
-    src/impl/glad.c
-    src/impl/rgfw.c
+    src/entity/tickable.cc
+    src/entity/viewable.cc
 
-    src/main.cc
-
-
-    src/app.cc
-    src/event.cc
-    src/window.cc
-    src/resource.cc
-
+    src/render/camera.cc
+    src/render/layer.cc
     src/render/renderer.cc
     src/render/shader.cc
+    src/app.cc
+    src/event.cc
+    src/main.cc
+    src/resource.cc
+    src/scene.cc
+    src/window.cc
+
+
+    src/impl/glad.c
+
 )
 
+target_link_directories(penguine_core
+    PRIVATE
+    ${CMAKE_SOURCE_DIR}/lib
+)
 
 target_link_libraries(penguine_core
     opengl32
-    gdi32
+    glfw3
 )
 
 set(CMAKE_BUILD_TYPE Debug)
-set(CMAKE_CXX_FLAGS "-O0")

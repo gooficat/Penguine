@@ -5,10 +5,9 @@ ShaderResource::ShaderResource(const std::string& path, const ShaderType& type) 
 }
 
 void ShaderResource::load() {
-    this->ID = glCreateShader(
-        (type == VERTEX_SHADER) ? GL_VERTEX_SHADER :
-        (type == GEOMETRY_SHADER) ? GL_GEOMETRY_SHADER :
-      /*(type == FRAGMENT_SHADER) ?*/ GL_FRAGMENT_SHADER
+    GLenum shader_type = (type == VERTEX_SHADER) ? GL_VERTEX_SHADER : GL_FRAGMENT_SHADER; // shh ignore the geometry shader ignorance
+    this->ID = glCreateShader( // i am so infuriated right now. i switched to glfw from rgfw for WHAT
+        shader_type
     );
     std::string content = ::Resource::loadTextFile(path);
     const char* source = content.c_str();

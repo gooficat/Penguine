@@ -2,16 +2,27 @@
 
 App::App() {
     this->window = new Window();
-    this->event_handler = new EventHandler();
+    this->event_handler = new EventHandler(window);
     this->renderer = new Renderer();
     App::active_instance = this;
+}
+
+void App::changeScene(const std::string& name) {
+    if (scenes.at(name)) {
+    this->active_scene = name;
+    }
+    else {
+        std::cerr << "Tried to change scenes but there is no scene named " << name << std::endl;
+    }
 }
 
 void App::run() {
     window->init();
     renderer->init(window);
-    while (true) { // scary i know
+    while (!glfwWindowShouldClose(window->getInternalWindow())) { // scary i know
         renderer->beginDraw();
+
+        this->scenes.at(active_scene)->draw();
 
         renderer->endDraw();
         event_handler->update();

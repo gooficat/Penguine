@@ -1,0 +1,35 @@
+{
+    "name": "testscene",
+    "resources": {
+        "simpvert": {
+            "type": "shader",
+            "flag": "vertex",
+            "path": "test.vert"
+        },
+        "simpfrag": {
+            "type": "shader",
+            "flag": "fragment",
+            "path": "test.vert"
+        },
+        "simp": {
+            "type": "shaderprogram",
+            "shaders": [
+                "simpvert",
+                "simpfrag"
+            ]
+        }
+    },
+    "tickables": {
+        "testtickable": {
+            "script": "scripts/testtickable.lua"
+        }
+    },
+    "layers": {
+        "0": {
+            "shaderprogram": "simp"
+        },
+        "1": {
+
+        }
+    }
+}

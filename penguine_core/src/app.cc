@@ -9,7 +9,7 @@ App::App() {
     renderer->init(window); // i am so infuriated right now i am so infuriated
 }
 
-void App::changeScene(const std::string& name) {
+void App::changeScene(const string& name) {
     if (scenes.at(name)) {
     this->active_scene = name;
     }

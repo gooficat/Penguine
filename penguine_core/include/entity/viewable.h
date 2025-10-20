@@ -4,17 +4,20 @@
 
 #include "render/mesh.h"
 
+#include "render/shader.h"
+
 class Viewable {
 public:
     Viewable();
-    virtual void render();
+    virtual void render(const ShaderProgram& shader_program);
 protected:
 private:
 };
 
 class MeshViewable : public Viewable {
 public:
-    MeshViewable(std::shared_ptr<MeshResource>& mesh);
-    void render();
-    std::shared_ptr<MeshResource> mesh;
+    MeshViewable(shared_ptr<MeshResource>& mesh);
+    void render(const ShaderProgram& shader_program);
+    shared_ptr<MeshResource> mesh;
+    float4x4 matrix;
 };

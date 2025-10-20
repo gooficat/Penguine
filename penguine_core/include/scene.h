@@ -13,12 +13,12 @@ public:
     void tickCallback(double delta_time);
     void draw();
 
-    void addTickable(const std::string& name, std::shared_ptr<Tickable>& tickable);
+    void addTickable(const string& name, shared_ptr<Tickable>& tickable);
     
-    void addLayer(std::shared_ptr<Camera>& camera, std::shared_ptr<ShaderProgram>& shader_program);
+    void addLayer(shared_ptr<Camera>& camera, shared_ptr<ShaderProgram>& shader_program);
 
-    std::map<std::string, std::shared_ptr<Tickable>> tickables;
-    std::vector<std::unique_ptr<Layer>> layers;
+    std::map<string, shared_ptr<Tickable>> tickables;
+    std::vector<unique_ptr<Layer>> layers;
 protected:
 private:
 };

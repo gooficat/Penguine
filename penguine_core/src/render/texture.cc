@@ -1,6 +1,6 @@
 #include "render/texture.h"
 
-Texture::Texture(const std::string& path) : Resource(path) {
+Texture::Texture(const string& path) : Resource(path) {
 
 }
 

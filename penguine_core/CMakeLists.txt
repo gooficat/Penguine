@@ -10,6 +10,8 @@ include_directories(include)
 
 # file(GLOB_RECURSE SRCS CONFIGURE_DEPENDS "src/*")
 
+# add_subdirectory()
+
 add_executable(penguine_core
     src/entity/tickable.cc
     src/entity/viewable.cc
@@ -45,5 +47,5 @@ target_link_libraries(penguine_core
     gdi32
 )
 
-add_compile_options("-w")
+# add_compile_options("-w")
 # set(CMAKE_BUILD_TYPE Debug)

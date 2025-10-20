@@ -11,7 +11,7 @@ enum ShaderType {
 };
 
 struct ShaderResource : public Resource {
-    ShaderResource(const std::string& path, const ShaderType& type);
+    ShaderResource(const string& path, const ShaderType& type);
     void load();
     ~ShaderResource();
     GLuint getID() const;
@@ -26,16 +26,16 @@ public:
     
     void use() const;
 
-    void setInt(const std::string& name, GLint value) const;
+    void setInt(const string& name, GLint value) const;
 
-    void setFloat(const std::string& name, GLfloat value) const;
-    void setFloat2(const std::string& name, float2 value) const;
-    void setFloat3(const std::string& name, float3 value) const;
-    void setFloat4(const std::string& name, float4 value) const;
+    void setFloat(const string& name, GLfloat value) const;
+    void setFloat2(const string& name, float2 value) const;
+    void setFloat3(const string& name, float3 value) const;
+    void setFloat4(const string& name, float4 value) const;
 
-    void setFloat4x4(const std::string& name, float4x4 value) const;
+    void setFloat4x4(const string& name, float4x4 value) const;
 
-    GLint findUniform(const std::string& name) const;
+    GLint findUniform(const string& name) const;
 private:
     GLuint ID;
 };

@@ -3,7 +3,7 @@
 #include <sstream>
 #include <fstream>
 
-Resource::Resource(const std::string& path) : path(path) {
+Resource::Resource(const string& path) : path(path) {
 
 }
 void Resource::load() {
@@ -13,14 +13,14 @@ Resource::~Resource() {
 
 }
 
-std::string Resource::loadTextFile(const std::string& path) {
+string Resource::loadTextFile(const string& path) {
    std::ifstream file(path);
    if (file.is_open() == false) {
       std::cerr << "Bingle bongle: " << path << std::endl;
       return "Bingle Bongle dingle dangle";
    }
-   std::string line;
-   std::string content;
+   string line;
+   string content;
    while (std::getline(file, line)) {
       content += line + "\n";
    }
@@ -29,6 +29,6 @@ std::string Resource::loadTextFile(const std::string& path) {
 }
 
 template <typename T>
-T Resource::loadBinaryFile(const std::string& path) {
+T Resource::loadBinaryFile(const string& path) {
     // to be implemented (if i even need it)
 }

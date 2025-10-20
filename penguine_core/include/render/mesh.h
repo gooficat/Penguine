@@ -12,7 +12,7 @@ struct Vertex {
 
 class MeshResource : public Resource {
 public:
-    MeshResource(const std::string& path);
+    MeshResource(const string& path);
 
     void draw();
     void generateVAO(const std::vector<Vertex>& vertices, const std::vector<GLuint>& indices);

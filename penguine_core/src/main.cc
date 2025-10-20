@@ -3,7 +3,7 @@
 class TestApp : public App {
 public:
   TestApp() : App() {
-      scenes["hello"] = std::make_shared<Scene>();
+      scenes["hello"] = make_shared<Scene>();
       active_scene = "hello";
 
       ShaderResource vertShader(
@@ -18,7 +18,7 @@ public:
       );
       fragShader.load();
       
-      std::shared_ptr<MeshResource> testMesh( new MeshResource("C:\\Projects\\Penguine\\penguine_core\\resources\\cube.obj"));
+      shared_ptr<MeshResource> testMesh( new MeshResource("C:\\Projects\\Penguine\\penguine_core\\resources\\cube.obj"));
       testMesh->generateVAO( // this should be internal later but for now it is just in here
         {
           {{-0.5f,-0.5f, 0.0f}},
@@ -30,7 +30,7 @@ public:
         }
       );
 
-      std::shared_ptr<Camera> testCam(
+      shared_ptr<Camera> testCam(
         new Camera(
           Camera::makePerspective(
             1.5f,
@@ -41,7 +41,7 @@ public:
         )
       );
 
-      std::shared_ptr<ShaderProgram> simpShaderProgram(
+      shared_ptr<ShaderProgram> simpShaderProgram(
         new ShaderProgram(
           vertShader,
           fragShader
@@ -53,13 +53,13 @@ public:
         simpShaderProgram
       );
 
-      std::shared_ptr<Tickable> testTickable(
+      shared_ptr<Tickable> testTickable(
         new Tickable(
-
+          
         )
       );
 
-      std::shared_ptr<Viewable> testViewable(
+      shared_ptr<Viewable> testViewable(
         new MeshViewable(
           testMesh
         )

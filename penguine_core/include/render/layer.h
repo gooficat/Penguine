@@ -8,13 +8,13 @@
 
 class Layer {
 public:
-    Layer(std::shared_ptr<Camera>& camera, std::shared_ptr<ShaderProgram>& shader_program);
-    void addViewable(const std::string& name, std::shared_ptr<Viewable>& viewable);
+    Layer(shared_ptr<Camera>& camera, shared_ptr<ShaderProgram>& shader_program);
+    void addViewable(const string& name, shared_ptr<Viewable>& viewable);
 
     void render();
 
-    std::shared_ptr<Camera> camera;
-    std::shared_ptr<ShaderProgram> shader_program;
-    std::map<std::string, std::shared_ptr<Viewable>> viewables;
+    shared_ptr<Camera> camera;
+    shared_ptr<ShaderProgram> shader_program;
+    std::map<string, shared_ptr<Viewable>> viewables;
 private:
 };

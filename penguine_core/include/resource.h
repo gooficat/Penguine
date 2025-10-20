@@ -4,24 +4,24 @@
 #include "global.h"
 
 struct Resource {
-    Resource(const std::string& path);
+    Resource(const string& path);
     virtual void load();
     virtual ~Resource();
 
-    static std::string loadTextFile(const std::string& path);
+    static string loadTextFile(const string& path);
 
     template <typename T>
-    static T loadBinaryFile(const std::string& path);
+    static T loadBinaryFile(const string& path);
 
-    std::string path;
+    string path;
 };
 
 class ResourceManager {
 public:
     ResourceManager();
-    void load(const std::string& path);
+    void load(const string& path);
 
-    std::map<std::string, std::shared_ptr<Resource>> resources;
+    std::map<string, shared_ptr<Resource>> resources;
 private:
 
 };

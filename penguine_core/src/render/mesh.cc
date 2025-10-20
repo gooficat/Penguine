@@ -1,7 +1,7 @@
 #include "render/mesh.h"
 
 
-MeshResource::MeshResource(const std::string& path) : Resource(path) {
+MeshResource::MeshResource(const string& path) : Resource(path) {
 
 }
 

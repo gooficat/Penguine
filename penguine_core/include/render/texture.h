@@ -6,8 +6,8 @@
 
 struct Texture : public Resource {
     GLuint ID;
-    std::string type;
-    Texture(const std::string& path);
+    string type;
+    Texture(const string& path);
     ~Texture();
     void load();
 };

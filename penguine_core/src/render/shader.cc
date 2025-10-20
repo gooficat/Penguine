@@ -1,6 +1,6 @@
 #include "render/shader.h"
 
-ShaderResource::ShaderResource(const std::string& path, const ShaderType& type) :
+ShaderResource::ShaderResource(const string& path, const ShaderType& type) :
     Resource(path), type(type) {
 }
 
@@ -23,7 +23,7 @@ void ShaderResource::load() {
     this->ID = glCreateShader( // i am so infuriated right now. i switched to glfw from rgfw for WHAT
         shader_type
     );
-    std::string content = ::Resource::loadTextFile(path);
+    string content = ::Resource::loadTextFile(path);
     const char* source = content.c_str();
     glShaderSource(ID, 1, &source, NULL);
     glCompileShader(ID);
@@ -52,29 +52,29 @@ void ShaderProgram::use() const {
 }
 
 
-void ShaderProgram::setInt(const std::string& name, GLint value) const {
+void ShaderProgram::setInt(const string& name, GLint value) const {
     glUniform1i(findUniform(name), value);
 }
 
-void ShaderProgram::setFloat(const std::string& name, GLfloat value) const {
+void ShaderProgram::setFloat(const string& name, GLfloat value) const {
     glUniform1f(findUniform(name), value);
 }
-void ShaderProgram::setFloat2(const std::string& name, float2 value) const {
+void ShaderProgram::setFloat2(const string& name, float2 value) const {
     glUniform2fv(findUniform(name), 1, &value[0]);
 }
-void ShaderProgram::setFloat3(const std::string& name, float3 value) const {
+void ShaderProgram::setFloat3(const string& name, float3 value) const {
     glUniform3fv(findUniform(name), 1, &value[0]);
 }
-void ShaderProgram::setFloat4(const std::string& name, float4 value) const {
+void ShaderProgram::setFloat4(const string& name, float4 value) const {
     glUniform4fv(findUniform(name), 1, &value[0]);
 }
 
 
-void ShaderProgram::setFloat4x4(const std::string& name, float4x4 value) const {
+void ShaderProgram::setFloat4x4(const string& name, float4x4 value) const {
     glUniformMatrix4fv(findUniform(name), 1, GL_FALSE, &value[0][0]);
 }
 
 
-GLint ShaderProgram::findUniform(const std::string& name) const {
+GLint ShaderProgram::findUniform(const string& name) const {
     return glGetUniformLocation(this->ID, name.c_str());
 }

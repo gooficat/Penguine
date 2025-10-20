@@ -1,0 +1,6 @@
+{
+    "scenes": [
+        "testscene.json"
+    ],
+    "resource_pack": "resources.json"
+}

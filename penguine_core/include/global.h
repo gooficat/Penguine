@@ -23,6 +23,9 @@
 
 #include "lib/json.hpp"
 
+#define TINYGLTF_NO_STB_IMAGE_WRITE
+#include "lib/tinygltf.h"
+
 using linalg::aliases::float1;
 using linalg::aliases::float2;
 using linalg::aliases::float3;

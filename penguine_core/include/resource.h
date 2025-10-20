@@ -3,6 +3,15 @@
 
 #include "global.h"
 
+
+#include "render/layer.h"
+#include "render/camera.h"
+#include "render/mesh.h"
+#include "render/shader.h"
+#include "render/texture.h"
+#include "entity/tickable.h"
+#include "entity/viewable.h"
+
 struct Resource {
     Resource(const string& path);
     virtual void load();

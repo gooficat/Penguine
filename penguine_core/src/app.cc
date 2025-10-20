@@ -1,12 +1,20 @@
 #include "app.h"
 
-App::App() {
-    this->window = new Window();
-    this->event_handler = new EventHandler(window);
-    this->renderer = new Renderer();
+App::App(const string& path) {
+    this->window = make_unique<Window>(new Window());
+    this->event_handler = make_unique<EventHandler>(new EventHandler(window.get()));
+    this->renderer = make_unique<Renderer>(new Renderer());
+    this->resource_manager = make_unique<ResourceManager>(new ResourceManager());
     App::active_instance = this;
     window->init();
-    renderer->init(window); // i am so infuriated right now i am so infuriated
+    renderer->init(window.get()); // i am so infuriated right now i am so infuriated
+
+    std::ifstream file(path);
+    nlohmann::json data = nlohmann::json::parse(file);
+
+    string res_path = data["resource_pack"];
+
+    resource_manager->load(res_path);
 }
 
 void App::changeScene(const string& name) {

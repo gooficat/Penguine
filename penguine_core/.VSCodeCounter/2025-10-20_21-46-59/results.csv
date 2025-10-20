@@ -1,0 +1,16 @@
+"filename", "language", "C++", "comment", "blank", "total"
+"c:\Projects\Penguine\penguine_core\include\app.h", "C++", 27, 0, 10, 37
+"c:\Projects\Penguine\penguine_core\include\entity\tickable.h", "C++", 10, 0, 4, 14
+"c:\Projects\Penguine\penguine_core\include\entity\viewable.h", "C++", 18, 0, 5, 23
+"c:\Projects\Penguine\penguine_core\include\event.h", "C++", 15, 1, 6, 22
+"c:\Projects\Penguine\penguine_core\include\global.h", "C++", 46, 2, 19, 67
+"c:\Projects\Penguine\penguine_core\include\render\camera.h", "C++", 20, 0, 6, 26
+"c:\Projects\Penguine\penguine_core\include\render\layer.h", "C++", 15, 0, 5, 20
+"c:\Projects\Penguine\penguine_core\include\render\mesh.h", "C++", 18, 0, 5, 23
+"c:\Projects\Penguine\penguine_core\include\render\renderer.h", "C++", 15, 0, 6, 21
+"c:\Projects\Penguine\penguine_core\include\render\shader.h", "C++", 33, 0, 10, 43
+"c:\Projects\Penguine\penguine_core\include\render\texture.h", "C++", 10, 0, 3, 13
+"c:\Projects\Penguine\penguine_core\include\resource.h", "C++", 27, 0, 11, 38
+"c:\Projects\Penguine\penguine_core\include\scene.h", "C++", 17, 0, 7, 24
+"c:\Projects\Penguine\penguine_core\include\window.h", "C++", 19, 1, 2, 22
+"Total", "-", 290, 4, 99, 393

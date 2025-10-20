@@ -34,6 +34,7 @@ add_executable(penguine_core
     src/impl/glad.c
     src/impl/rgfw.c
     src/impl/stb_image.c
+    src/impl/tinygltf.cc
 )
 
 target_link_directories(penguine_core

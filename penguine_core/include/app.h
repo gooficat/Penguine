@@ -12,17 +12,21 @@
 
 #include "render/mesh.h"
 
+#include "resource.h"
+
 class App {
 public:
-    App();
+    App(const string& path);
     ~App();
     void run();
     void changeScene(const string& name);
     inline static App *active_instance;
 protected:
-    Window *window;
-    EventHandler *event_handler;
-    Renderer *renderer;
+    unique_ptr<Window> window;
+    unique_ptr<EventHandler> event_handler;
+    unique_ptr<Renderer> renderer;
+    unique_ptr<ResourceManager> resource_manager;
+    
 
     string active_scene;
     std::map<string, shared_ptr<Scene>> scenes;

@@ -1,0 +1,39 @@
+Date : 2025-10-20 21:46:59
+Directory : c:\Projects\Penguine\penguine_core\include
+Total : 12 files,  80 codes, 4 comments, 38 blanks, all 122 lines
+
+Languages
++----------+------------+------------+------------+------------+------------+
+| language | files      | code       | comment    | blank      | total      |
++----------+------------+------------+------------+------------+------------+
+| C++      |         12 |         80 |          4 |         38 |        122 |
++----------+------------+------------+------------+------------+------------+
+
+Directories
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                         | files      | code       | comment    | blank      | total      |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                            |         12 |         80 |          4 |         38 |        122 |
+| . (Files)                                                    |          6 |         42 |          4 |         24 |         70 |
+| entity                                                       |          2 |         10 |          0 |          5 |         15 |
+| render                                                       |          4 |         28 |          0 |          9 |         37 |
++--------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++--------------------------------------------------------------+----------+------------+------------+------------+------------+
+| filename                                                     | language | code       | comment    | blank      | total      |
++--------------------------------------------------------------+----------+------------+------------+------------+------------+
+| c:\Projects\Penguine\penguine_core\include\app.h             | C++      |          3 |          0 |          3 |          6 |
+| c:\Projects\Penguine\penguine_core\include\entity\tickable.h | C++      |          1 |          0 |          2 |          3 |
+| c:\Projects\Penguine\penguine_core\include\entity\viewable.h | C++      |          9 |          0 |          3 |         12 |
+| c:\Projects\Penguine\penguine_core\include\event.h           | C++      |          0 |          1 |          0 |          1 |
+| c:\Projects\Penguine\penguine_core\include\global.h          | C++      |         23 |          2 |         13 |         38 |
+| c:\Projects\Penguine\penguine_core\include\render\camera.h   | C++      |          1 |          0 |          1 |          2 |
+| c:\Projects\Penguine\penguine_core\include\render\mesh.h     | C++      |         18 |          0 |          5 |         23 |
+| c:\Projects\Penguine\penguine_core\include\render\shader.h   | C++      |         -1 |          0 |          0 |         -1 |
+| c:\Projects\Penguine\penguine_core\include\render\texture.h  | C++      |         10 |          0 |          3 |         13 |
+| c:\Projects\Penguine\penguine_core\include\resource.h        | C++      |         15 |          0 |          6 |         21 |
+| c:\Projects\Penguine\penguine_core\include\scene.h           | C++      |          1 |          0 |          2 |          3 |
+| c:\Projects\Penguine\penguine_core\include\window.h          | C++      |          0 |          1 |          0 |          1 |
+| Total                                                        |          |         80 |          4 |         38 |        122 |
++--------------------------------------------------------------+----------+------------+------------+------------+------------+

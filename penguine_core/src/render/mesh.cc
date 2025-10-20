@@ -2,7 +2,7 @@
 
 
 MeshResource::MeshResource(const string& path) : Resource(path) {
-
+    // tinygltf::
 }
 
 void MeshResource::generateVAO(const std::vector<Vertex>& vertices, const std::vector<GLuint>& indices) {

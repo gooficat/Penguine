@@ -16,4 +16,14 @@ struct Resource {
     std::string path;
 };
 
+class ResourceManager {
+public:
+    ResourceManager();
+    void load(const std::string& path);
+
+    std::map<std::string, std::shared_ptr<Resource>> resources;
+private:
+
+};
+
 #endif

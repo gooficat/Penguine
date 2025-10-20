@@ -10,6 +10,17 @@ void MeshResource::generateVAO(const std::vector<Vertex>& vertices, const std::v
     glGenBuffers(1, &VBO);
     glGenBuffers(1, &EBO);
 
+    if (!VAO) {
+        std::cerr << "VAO is null!" << std::endl;
+    }
+    if (!VBO) {
+        std::cerr << "VBO is null!" << std::endl;
+    }
+    if (!EBO) {
+        std::cerr << "EBO is null!" << std::endl;
+    }
+    
+    
     glBindVertexArray(VAO);
     
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
@@ -22,9 +33,13 @@ void MeshResource::generateVAO(const std::vector<Vertex>& vertices, const std::v
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 
     glBindVertexArray(0);
+
+    this->num_indices = indices.size();
 }
 
 void MeshResource::draw() {
+    // std::cout << "I am being rendered" << std::endl;
     glBindVertexArray(VAO);
     glDrawElements(GL_TRIANGLES, num_indices, GL_UNSIGNED_INT, 0);
+    glBindVertexArray(0);
 }

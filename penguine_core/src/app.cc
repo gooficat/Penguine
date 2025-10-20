@@ -19,8 +19,6 @@ void App::changeScene(const std::string& name) {
 }
 
 void App::run() {
-    window->init();
-    renderer->init(window);
     while (!RGFW_window_shouldClose(window->getInternalWindow())) { // scary i know
         renderer->beginDraw();
 

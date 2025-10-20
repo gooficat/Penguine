@@ -45,4 +45,5 @@ target_link_libraries(penguine_core
     gdi32
 )
 
-set(CMAKE_BUILD_TYPE Debug)
+add_compile_options("-w")
+# set(CMAKE_BUILD_TYPE Debug)

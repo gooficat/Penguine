@@ -30,6 +30,8 @@ add_executable(penguine_core
     src/scene.cc
     src/window.cc
 
+    src/resource_manager.cc
+
 
     src/impl/glad.c
     src/impl/rgfw.c

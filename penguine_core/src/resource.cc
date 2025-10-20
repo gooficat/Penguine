@@ -32,19 +32,3 @@ template <typename T>
 T Resource::loadBinaryFile(const string& path) {
     // to be implemented (if i even need it)
 }
-
-
-ResourceManager::ResourceManager() {
-
-}
-
-void ResourceManager::load(const string& path) {
-   std::ifstream f(path);
-   nlohmann::json data = nlohmann::json::parse(f);
-
-   for (auto& res : data) {
-      if (res["type"] == "shader") {
-         std::cout << res["flag"] << std::endl;
-      }
-   }
-}

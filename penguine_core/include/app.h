@@ -14,6 +14,8 @@
 
 #include "resource.h"
 
+#include "resource_manager.h"
+
 class App {
 public:
     App(const string& path);

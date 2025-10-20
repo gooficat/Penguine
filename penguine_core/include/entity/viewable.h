@@ -1,4 +1,5 @@
-#pragma once
+#ifndef VIEWABLE_H_
+#define VIEWABLE_H_
 
 #include "global.h"
 
@@ -21,3 +22,5 @@ public:
     shared_ptr<MeshResource> mesh;
     float4x4 matrix;
 };
+
+#endif

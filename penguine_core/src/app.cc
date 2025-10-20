@@ -1,10 +1,10 @@
 #include "app.h"
 
 App::App(const string& path) {
-    this->window = make_unique<Window>(new Window());
-    this->event_handler = make_unique<EventHandler>(new EventHandler(window.get()));
-    this->renderer = make_unique<Renderer>(new Renderer());
-    this->resource_manager = make_unique<ResourceManager>(new ResourceManager());
+    this->window = make_unique<Window>();
+    this->event_handler = make_unique<EventHandler>(window.get());
+    this->renderer = make_unique<Renderer>();
+    this->resource_manager = make_unique<ResourceManager>();
     App::active_instance = this;
     window->init();
     renderer->init(window.get()); // i am so infuriated right now i am so infuriated

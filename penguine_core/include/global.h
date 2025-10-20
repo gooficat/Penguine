@@ -46,6 +46,7 @@ using linalg::aliases::float4x4;
 #include <map>
 #include <memory>
 #include <cmath>
+#include <fstream>
 
 using std::int8_t;
 using std::int16_t;

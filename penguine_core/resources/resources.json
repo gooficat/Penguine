@@ -1,0 +1,16 @@
+{
+    "simpvert": {
+        "type": "shader",
+        "flag": "vertex",
+        "path": "test.vert"
+    },
+    "simpfrag": {
+        "type": "shader",
+        "flag": "fragment",
+        "path": "test.vert"
+    },
+    "cube": {
+        "type": "model",
+        "path": "cube.obj"
+    }
+}

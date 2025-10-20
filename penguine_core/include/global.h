@@ -8,18 +8,31 @@
 // #pragma comment(lib, "lib/glfw3.lib") // now that is disgusting
 
 #define RGFW_OPENGL
-#define RGFW_USE_XDL // feel free to remove this line if you don't want to use XDL (-lX11 -lXrandr -lGLX will be required)
+#define RGFW_USE_XDL
 #define RGFW_ALLOC_DROPFILES
-// #define RGFW_IMPLEMENTATION
 #define RGFW_PRINT_ERRORS
 #define RGFW_DEBUG
 #define GL_SILENCE_DEPRECATION
 #include "lib/RGFW.h"
 
+#include "lib/stb_image.h"
+
 
 #define LINALG_FORWARD_COMPATIBLE
 #include "lib/linalg.h"
-using namespace linalg::aliases; // woo dangerous!
+
+using linalg::aliases::float1;
+using linalg::aliases::float2;
+using linalg::aliases::float3;
+using linalg::aliases::float4;
+
+using linalg::aliases::int1;
+using linalg::aliases::int2;
+using linalg::aliases::int3;
+using linalg::aliases::int4;
+
+using linalg::aliases::float4x4;
+
 
 #include <cstdint>
 #include <vector>

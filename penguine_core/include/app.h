@@ -10,6 +10,8 @@
 
 #include "scene.h"
 
+#include "render/mesh.h"
+
 class App {
 public:
     App();

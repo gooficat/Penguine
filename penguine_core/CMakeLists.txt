@@ -18,6 +18,9 @@ add_executable(penguine_core
     src/render/layer.cc
     src/render/renderer.cc
     src/render/shader.cc
+    src/render/mesh.cc
+    src/render/texture.cc
+
     src/app.cc
     src/event.cc
     src/main.cc
@@ -28,6 +31,7 @@ add_executable(penguine_core
 
     src/impl/glad.c
     src/impl/rgfw.c
+    src/impl/stb_image.c
 )
 
 target_link_directories(penguine_core

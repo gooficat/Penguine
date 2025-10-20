@@ -18,6 +18,18 @@ public:
       );
       fragShader.load();
       
+      MeshResource testMesh("C:\\Projects\\Penguine\\penguine_core\\resources\\cube.obj");
+      testMesh.generateVAO(
+        {
+          {{-0.5f,-0.5f, 0.0f}},
+          {{ 0.5f,-0.5f, 0.0f}},
+          {{ 0.0f, 0.5f, 0.0f}}
+        },
+        {
+          0, 1, 2
+        }
+      );
+
       scenes["hello"]->addLayer(
         std::shared_ptr<Camera>( new Camera(
           Camera::makePerspective(
@@ -43,7 +55,7 @@ public:
       scenes["hello"]->layers[0]->addViewable(
         "testmesh",
         new Viewable(
-
+          
         )
       );
   }

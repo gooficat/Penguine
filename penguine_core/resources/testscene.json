@@ -1,22 +1,21 @@
 {
     "name": "testscene",
-    "resources": {
-        "simpvert": {
-            "type": "shader",
-            "flag": "vertex",
-            "path": "test.vert"
-        },
-        "simpfrag": {
-            "type": "shader",
-            "flag": "fragment",
-            "path": "test.vert"
-        },
-        "simp": {
-            "type": "shaderprogram",
-            "shaders": [
-                "simpvert",
-                "simpfrag"
-            ]
+    "programs": {
+        "simp": [
+            "simpvert",
+            "simpfrag"
+        ]
+    },
+    "cameras": {
+        "testcam": {
+            "flag": "perspective",
+            "position": [0, 0, 5],
+            "rotation": [0, 0, 0],
+            "projection": {
+                "fov": 1.5,
+                "near": 0.1,
+                "far": 100.0
+            }
         }
     },
     "tickables": {
@@ -24,12 +23,18 @@
             "script": "scripts/testtickable.lua"
         }
     },
+    "viewables": {
+        "testcube": {
+            "model": "cube"
+        }
+    },
     "layers": {
         "0": {
-            "shaderprogram": "simp"
-        },
-        "1": {
-
+            "shaderprogram": "simp",
+            "camera": "testcam",
+            "viewables": [
+                "testcube"
+            ]
         }
     }
 }

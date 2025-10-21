@@ -1,5 +1,9 @@
 #include "resource_manager.h"
 
+// constexpr make_float3() {
+
+// }
+
 
 ResourceManager::ResourceManager() {
 
@@ -15,12 +19,17 @@ void ResourceManager::load(const string& asset_pack_path, const string& entity_p
    e_file.close();
 
    for (auto& res : res_data) {
-      if (res["type"] == "shader") {
          string path = res["path"];
-         string type = res["flag"];
          string name = res["name"];
-         std::cout << name << path << " " << type << std::endl;
+         std::cout << name << path << " " << std::endl;
+      if (res["type"] == "shader") {
+         string type = res["flag"];
          resources[name] = make_shared<ShaderResource>(path, type);
+      }
+      if (res["type"] == "mesh") {
+         resources[res["name"]] = make_shared<MeshResource>(
+            path
+         );
       }
    }
 
@@ -48,8 +57,8 @@ void ResourceManager::load(const string& asset_pack_path, const string& entity_p
             cf["near"],
             cf["far"]
          ),
-         (float3){cp[0], cp[1], cp[2]},
-         (float3){cr[0], cr[1], cr[2]}
+         float3{cp[0], cp[1], cp[2]},
+         float3{cr[0], cr[1], cr[2]}
       );
    }
 
@@ -64,8 +73,10 @@ void ResourceManager::load(const string& asset_pack_path, const string& entity_p
 
    for (auto& viewable : ent_data["viewables"]) {
       std::cout << "viewable name is " << viewable["name"] << std::endl;
+      std::cout << "viewable mesh is" << viewable["model"] << std::endl;
       viewables[viewable["name"]] = make_shared<MeshViewable>(
          *(std::dynamic_pointer_cast<MeshResource>(resources[viewable["model"]]))
       ); // oh this is gonna suck to debug
+      std::cout << "successfully (??) loaded viewable" << std::endl;
    }
 }

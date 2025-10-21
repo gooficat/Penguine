@@ -13,7 +13,7 @@ void Camera::use(ShaderProgram& shader_program) {
 }
 
 void Camera::updateViewMatrix() {
-    view_matrix = linalg::lookat_matrix((float3){0.0f, 0.0f, 3.0f}, (float3){0.0f,0.0f,0.0f}, (float3){0.0f,1.0f,0.0f});
+    view_matrix = linalg::lookat_matrix(float3{0.0f, 0.0f, 3.0f}, float3{0.0f,0.0f,0.0f}, float3{0.0f,1.0f,0.0f});
 }
 
 void Camera::updateProjectionMatrix() {

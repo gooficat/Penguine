@@ -16,6 +16,7 @@ App::App(const string& path) {
     resource_manager->load(data["asset_pack"], data["entities"]);
 
     for (auto& scene : data["scenes"]) {
+        std::cout << "load scene" << std::endl;
         addScene(scene);
     }
 }
@@ -49,10 +50,15 @@ void App::addScene(const string& path) {
     std::ifstream f(path);
     nlohmann::json j = nlohmann::json::parse(f);
     f.close();
+    std::cout << scenes[j["name"]] << std::endl;
 
     scenes[j["name"]] =  make_shared<Scene>();
+
     
     for (auto& layer : j["layers"]) {
+    
+    std::cout << layer["name"] << std::endl;
+    
         scenes[j["name"]]->addLayer(
             resource_manager->cameras[layer["camera"]],
             resource_manager->programs[layer["shader_program"]]

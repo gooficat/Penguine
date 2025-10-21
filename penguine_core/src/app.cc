@@ -11,10 +11,13 @@ App::App(const string& path) {
 
     std::ifstream file(path);
     nlohmann::json data = nlohmann::json::parse(file);
+    file.close();
 
-    string res_path = data["resource_pack"];
+    resource_manager->load(data["asset_pack"], data["entities"]);
 
-    resource_manager->load(res_path);
+    for (auto& scene : data["scenes"]) {
+        addScene(scene);
+    }
 }
 
 void App::changeScene(const string& name) {
@@ -39,4 +42,13 @@ void App::run() {
 
 App::~App() {
 
+}
+
+
+void App::addScene(const string& path) {
+    std::ifstream f(path);
+    nlohmann::json j = nlohmann::json::parse(f);
+    f.close();
+
+    scenes[j["name"]] =  make_shared<Scene>();
 }

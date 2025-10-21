@@ -1,16 +1,19 @@
-{
-    "simpvert": {
+[
+    {
+        "name": "simpvert",
         "type": "shader",
         "flag": "vertex",
-        "path": "test.vert"
+        "path": "C:\\Projects\\Penguine\\penguine_core\\resources\\test.vert"
     },
-    "simpfrag": {
+    {
+        "name": "simpfrag",
         "type": "shader",
         "flag": "fragment",
-        "path": "test.vert"
+        "path": "C:\\Projects\\Penguine\\penguine_core\\resources\\test.frag"
     },
-    "cube": {
+    {
+        "name": "cube",
         "type": "model",
-        "path": "cube.obj"
+        "path": "C:\\Projects\\Penguine\\penguine_core\\resources\\cube.obj"
     }
-}
+]

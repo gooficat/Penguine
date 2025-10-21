@@ -11,9 +11,13 @@
 class ResourceManager {
 public:
     ResourceManager();
-    void load(const string& path);
+    void load(const string& asset_pack_path, const string& entity_pack_path);
 
     std::map<string, shared_ptr<Resource>> resources;
+
+    std::map<string, shared_ptr<Camera>> cameras;
+    std::map<string, shared_ptr<Tickable>> tickables;
+    std::map<string, shared_ptr<Viewable>> viewables;
 private:
 
 };

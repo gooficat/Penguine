@@ -1,0 +1,31 @@
+
+{
+    "programs": {
+        "simp": [
+            "simpvert",
+            "simpfrag"
+        ]
+    },
+    "cameras": {
+        "testcam": {
+            "flag": "perspective",
+            "position": [0, 0, 5],
+            "rotation": [0, 0, 0],
+            "projection": {
+                "fov": 1.5,
+                "near": 0.1,
+                "far": 100.0
+            }
+        }
+    },
+    "tickables": {
+        "testtickable": {
+            "script": "scripts/testtickable.lua"
+        }
+    },
+    "viewables": {
+        "testcube": {
+            "model": "cube"
+        }
+    }
+}

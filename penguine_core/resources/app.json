@@ -1,6 +1,7 @@
 {
-    "scenes": [
-        "testscene.json"
-    ],
-    "resource_pack": "resources.json"
+    "entities": "C:\\Projects\\Penguine\\penguine_core\\resources\\entities.json",
+    "scenes": {
+        "testscene" : "C:\\Projects\\Penguine\\penguine_core\\resources\\testscene.json"
+    },
+    "asset_pack": "C:\\Projects\\Penguine\\penguine_core\\resources\\resources.json"
 }

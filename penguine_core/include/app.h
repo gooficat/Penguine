@@ -23,6 +23,8 @@ public:
     void run();
     void changeScene(const string& name);
     inline static App *active_instance;
+
+    void addScene(const string& path);
 protected:
     unique_ptr<Window> window;
     unique_ptr<EventHandler> event_handler;

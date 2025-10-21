@@ -4,20 +4,14 @@
 #include "global.h"
 #include "resource.h"
 
-enum ShaderType {
-    VERTEX_SHADER,
-    GEOMETRY_SHADER,
-    FRAGMENT_SHADER,
-};
-
 struct ShaderResource : public Resource {
-    ShaderResource(const string& path, const ShaderType& type);
+    ShaderResource(const string& path, const string& type);
     void load();
     ~ShaderResource();
     GLuint getID() const;
     GLuint ID;
 private:
-    ShaderType type;
+    string type;
 };
 
 class ShaderProgram {

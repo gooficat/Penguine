@@ -6,7 +6,7 @@
 #include "shader.h"
 
 
-class Camera {
+class Camera : {
 public:
     Camera(float4x4 projection, float3 position, float3 rotation);
     void use(ShaderProgram& shaderProgram);

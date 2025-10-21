@@ -1,25 +1,22 @@
 #include "render/shader.h"
 
-ShaderResource::ShaderResource(const string& path, const ShaderType& type) :
+ShaderResource::ShaderResource(const string& path, const string& type) :
     Resource(path), type(type) {
 }
 
 void ShaderResource::load() {
     GLenum shader_type;
-    switch (type) {
-        case VERTEX_SHADER:
+    if (type == "vertex")
             shader_type = GL_VERTEX_SHADER;
-            break;
-        case FRAGMENT_SHADER:
+    else if (type == "fragment")
             shader_type = GL_FRAGMENT_SHADER;
-            break;
-        case GEOMETRY_SHADER:
+    else if (type == "geometry")
             shader_type = GL_GEOMETRY_SHADER;
-            break;
-        default:
-            std::cerr << "currently we only support vertex, geometry and fragment shaders!" << std::endl;
-            break;
+    else {
+        std::cerr << "currently we only support vertex, geometry and fragment shaders! type was \'" << type << "\'" << std::endl;
+        return;
     }
+
     this->ID = glCreateShader( // i am so infuriated right now. i switched to glfw from rgfw for WHAT
         shader_type
     );

@@ -10,7 +10,8 @@ void Layer::addViewable(const string& name, shared_ptr<Viewable>& viewable) {
 
 void Layer::render() {
     shader_program->use();
+    camera->use(*shader_program);
     for (auto& viewable : viewables) {
-        viewable.second.get()->render(*(shader_program.get()));
+        viewable.second.get()->render(*shader_program);
     }
 }

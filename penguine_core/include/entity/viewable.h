@@ -17,7 +17,7 @@ private:
 
 class MeshViewable : public Viewable {
 public:
-    MeshViewable(shared_ptr<MeshResource>& mesh);
+    MeshViewable(MeshResource& mesh);
     void render(const ShaderProgram& shader_program);
     shared_ptr<MeshResource> mesh;
     float4x4 matrix;

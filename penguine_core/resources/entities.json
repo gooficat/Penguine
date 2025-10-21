@@ -1,13 +1,15 @@
 
 {
-    "programs": {
-        "simp": [
-            "simpvert",
-            "simpfrag"
-        ]
-    },
-    "cameras": {
-        "testcam": {
+    "programs": [
+        {
+            "name": "simp",
+            "vert": "simpvert",
+            "frag": "simpfrag"
+        }
+    ],
+    "cameras": [
+        {
+            "name": "testcam",
             "flag": "perspective",
             "position": [0, 0, 5],
             "rotation": [0, 0, 0],
@@ -17,15 +19,17 @@
                 "far": 100.0
             }
         }
-    },
-    "tickables": {
-        "testtickable": {
+    ],
+    "tickables": [
+        {
+            "name": "testtickable",
             "script": "scripts/testtickable.lua"
         }
-    },
-    "viewables": {
-        "testcube": {
+    ],
+    "viewables": [
+        {
+            "name": "testcube",
             "model": "cube"
         }
-    }
+    ]
 }

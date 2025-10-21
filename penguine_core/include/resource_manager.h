@@ -15,6 +15,7 @@ public:
 
     std::map<string, shared_ptr<Resource>> resources;
 
+    std::map<string, shared_ptr<ShaderProgram>> programs;
     std::map<string, shared_ptr<Camera>> cameras;
     std::map<string, shared_ptr<Tickable>> tickables;
     std::map<string, shared_ptr<Viewable>> viewables;

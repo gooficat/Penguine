@@ -2,7 +2,16 @@
 
 
 MeshResource::MeshResource(const string& path) : Resource(path) {
-    // tinygltf::
+      this->generateVAO( // this should be loaded as a real mesh later but for now it is just in here
+        {
+          {{-0.5f,-0.5f, 0.0f}},
+          {{ 0.5f,-0.5f, 0.0f}},
+          {{ 0.0f, 0.5f, 0.0f}}
+        },
+        {
+          0, 1, 2
+        }
+      );
 }
 
 void MeshResource::generateVAO(const std::vector<Vertex>& vertices, const std::vector<GLuint>& indices) {

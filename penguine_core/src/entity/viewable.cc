@@ -8,7 +8,8 @@ void Viewable::render(const ShaderProgram& shader_program) {
     std::cout << "I am being \'viewed\'" << std::endl;
 }
 
-MeshViewable::MeshViewable(shared_ptr<MeshResource>& mesh) : mesh(mesh), matrix(linalg::identity) {
+MeshViewable::MeshViewable(MeshResource& mesh) : mesh(make_shared<MeshResource>(mesh)), matrix(linalg::identity) {
+    
 }
 
 void MeshViewable::render(const ShaderProgram& shader_program) {

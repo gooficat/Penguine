@@ -1,12 +1,15 @@
 {
     "name": "testscene",
-    "layers": {
-        "0": {
-            "shaderprogram": "simp",
+    "layers": [
+        {
+            "shader_program": "simp",
             "camera": "testcam",
             "viewables": [
                 "testcube"
             ]
         }
-    }
+    ],
+    "tickables": [
+        "testtickable"
+    ]
 }

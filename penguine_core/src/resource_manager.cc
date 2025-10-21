@@ -53,13 +53,17 @@ void ResourceManager::load(const string& asset_pack_path, const string& entity_p
       );
    }
 
+   std::cout << "Loaded cameras. now loading tickables" << std::endl;
+
    for (auto& tickable : ent_data["tickables"]) {
+      std::cout << "tickable name is " << tickable["name"] << std::endl;
       tickables[tickable["name"]] = make_shared<Tickable>(
 
       );
    }
 
    for (auto& viewable : ent_data["viewables"]) {
+      std::cout << "viewable name is " << viewable["name"] << std::endl;
       viewables[viewable["name"]] = make_shared<MeshViewable>(
          *(std::dynamic_pointer_cast<MeshResource>(resources[viewable["model"]]))
       ); // oh this is gonna suck to debug

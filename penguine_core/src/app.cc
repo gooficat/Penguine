@@ -51,4 +51,17 @@ void App::addScene(const string& path) {
     f.close();
 
     scenes[j["name"]] =  make_shared<Scene>();
+    
+    for (auto& layer : j["layers"]) {
+        scenes[j["name"]]->addLayer(
+            resource_manager->cameras[layer["camera"]],
+            resource_manager->programs[layer["shader_program"]]
+        );
+        for (auto& viewable : layer["viewables"]) {
+            scenes[j["name"]]->layers.end()->get()->addViewable(
+                viewable,
+                resource_manager->viewables[viewable]
+            );
+        }
+    }
 }

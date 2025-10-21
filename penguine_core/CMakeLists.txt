@@ -50,5 +50,5 @@ target_link_libraries(penguine_core
     gdi32
 )
 
-add_compile_options("-O0")
+add_compile_options("-O0 -Wall -Wpedantic")
 set(CMAKE_BUILD_TYPE Debug)

@@ -134,9 +134,13 @@
     <ClCompile Include="ECS.ixx" />
     <ClCompile Include="Entity.ixx" />
     <ClCompile Include="EntityManager.ixx" />
+    <ClCompile Include="Mathematics.ixx" />
+    <ClCompile Include="MeshComponent.ixx" />
     <ClCompile Include="Penguine.cxx" />
+    <ClCompile Include="RenderSystem.ixx" />
     <ClCompile Include="System.ixx" />
     <ClCompile Include="SystemManager.ixx" />
+    <ClCompile Include="TransformComponent.ixx" />
     <ClCompile Include="Window.ixx" />
   </ItemGroup>
   <ItemGroup>

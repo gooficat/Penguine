@@ -22,6 +22,18 @@
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{8fe8c041-2c5a-4d2a-90ac-601672051e98}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Spatial">
+      <UniqueIdentifier>{07b503e6-21ca-42b7-97eb-e8274836a32d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Entity">
+      <UniqueIdentifier>{6155ee7a-d002-4478-a5b6-37da70e61d0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\Component">
+      <UniqueIdentifier>{5186cadc-e256-49b2-a979-65a46554a352}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\ECS\System">
+      <UniqueIdentifier>{3167e9f8-d449-4104-906d-9d5fae0bd7b0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Penguine.cxx">
@@ -33,29 +45,41 @@
     <ClCompile Include="Window.ixx">
       <Filter>Source Files\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Entity.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="System.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="Component.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ComponentGroup.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="EntityManager.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="ComponentManager.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
-    <ClCompile Include="SystemManager.ixx">
-      <Filter>Source Files\ECS</Filter>
-    </ClCompile>
     <ClCompile Include="ECS.ixx">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderSystem.ixx">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshComponent.ixx">
+      <Filter>Source Files\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="TransformComponent.ixx">
+      <Filter>Source Files\Spatial</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics.ixx">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Component.ixx">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentGroup.ixx">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="ComponentManager.ixx">
+      <Filter>Source Files\ECS\Component</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.ixx">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityManager.ixx">
+      <Filter>Source Files\ECS\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="System.ixx">
+      <Filter>Source Files\ECS\System</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemManager.ixx">
+      <Filter>Source Files\ECS\System</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

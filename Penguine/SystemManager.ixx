@@ -2,7 +2,7 @@ export module SystemManager;
 
 import <cassert>;
 import <memory>;
-import <unordered_map>;
+import <unordered_map>; // make ordered eventually
 
 import Entity;
 import Component;
@@ -14,6 +14,8 @@ public:
 	template <typename T>
 	std::shared_ptr<T> RegisterSystem()
 	{
+		//assert( systems.find( type_name ) == system.end() && "Attempted to add two of the same system." );
+
 		std::string type_name = typeid( T ).name();
 
 		auto system = std::make_shared<T>();
@@ -26,9 +28,17 @@ public:
 	{
 		std::string type_name = typeid( T ).name();
 
-		assert( systems.find( type_name ) != system.end && "Attempted to use an unregistered system." );
+		assert( systems.find( type_name ) != system.end() && "Attempted to use an unregistered system." );
 
 		signatures.insert( { type_name, signature } );
+	}
+
+	template<typename T>
+	std::shared_ptr<T>& RetrieveSystem()
+	{
+		std::string type_name = typeid( T ).name();
+
+		return systems.at( type_name );
 	}
 
 	void EntityDestroyed( Entity entity )

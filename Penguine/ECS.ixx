@@ -73,8 +73,13 @@ public:
 	{
 		return system_manager->AssignSignature<T>( signature );
 	}
-private:
 
+	template<typename T>
+	std::shared_ptr<T>& RetrieveSystem()
+	{
+		return system_manager->RetrieveSystem<T>();
+	}
+private:
 	std::unique_ptr<EntityManager> entity_manager;
 	std::unique_ptr<ComponentManager> component_manager;
 	std::unique_ptr<SystemManager> system_manager;

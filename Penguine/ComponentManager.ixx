@@ -4,7 +4,7 @@ import Entity;
 import Component;
 import ComponentGroup;
 
-import <unordered_map>;
+import <map>;
 import <string>;
 import <memory>;
 
@@ -59,8 +59,8 @@ public:
 		}
 	}
 private:
-	std::unordered_map<std::string, std::shared_ptr<IComponentGroup>> component_groups;
-	std::unordered_map<std::string, ComponentType> component_types;
+	std::map<std::string, std::shared_ptr<IComponentGroup>> component_groups;
+	std::map<std::string, ComponentType> component_types;
 
 	ComponentType next_component_type = 0;
 

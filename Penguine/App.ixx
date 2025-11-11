@@ -9,17 +9,6 @@ import <thread>;
 import <string>;
 import <chrono>;
 
-class TestSystem : public System
-{
-public:
-	void Update( double delta_time )
-	{
-		std::println( "Hello, World!" );
-	}
-private:
-};
-
-
 namespace Penguine
 {
 	void CallTickLoop();
@@ -28,7 +17,7 @@ namespace Penguine
 	{
 	public:
 
-		enum class GameState
+		enum class AppState
 		{
 			STARTUP = 0,
 			RUNNING = 1,
@@ -39,7 +28,7 @@ namespace Penguine
 
 		App() : ECSCoordinator()
 		{
-			current_state = GameState::STARTUP;
+			current_state = AppState::STARTUP;
 			std::cout << "Hello!" << std::endl;
 
 			tick_rate = 24.0;
@@ -52,10 +41,15 @@ namespace Penguine
 
 		}
 
+		virtual void Render()
+		{
+
+		}
+
 
 		int Run()
 		{
-			current_state = GameState::RUNNING;
+			current_state = AppState::RUNNING;
 
 			std::thread ticking_thread( CallTickLoop );
 
@@ -69,17 +63,8 @@ namespace Penguine
 
 
 		inline static App* active_instance;
-	private:
 		double tick_rate;
-		std::vector<std::function<void( double )>> ticked_functions;
 
-		void AddTickedProcess( void( *func )( double ) )
-		{
-			ticked_functions.push_back( [ func ] ( double dt )
-										{
-											func( dt );
-										} );
-		}
 		void TickLoop()
 		{
 			double delta_time = 0.0;
@@ -87,7 +72,7 @@ namespace Penguine
 
 
 		CONTINUE_UPDATE_LOOP:
-			while ( current_state < GameState::PAUSE )
+			while ( current_state < AppState::PAUSE )
 			{
 				auto start_time = std::chrono::steady_clock::now();
 
@@ -98,10 +83,11 @@ namespace Penguine
 				auto elapsed_tick = end_time - start_time;
 
 				delta_time = std::chrono::duration<double, std::milli>( elapsed_tick ).count();
+				//std::println( "{}", delta_time );
 			}
-			if ( current_state != GameState::TERMINATION )
+			if ( current_state != AppState::TERMINATION )
 			{
-				while ( current_state > GameState::RUNNING );
+				while ( current_state > AppState::RUNNING );
 
 				goto CONTINUE_UPDATE_LOOP;
 			}
@@ -110,14 +96,14 @@ namespace Penguine
 		void RenderLoop()
 		{
 		CONTINUE_RENDER_LOOP:
-			while ( current_state < GameState::INACTIVE )
+			while ( current_state < AppState::INACTIVE )
 			{
-
+				Render();
 			}
 
-			if ( current_state != GameState::TERMINATION )
+			if ( current_state != AppState::TERMINATION )
 			{
-				while ( current_state > GameState::RUNNING );
+				while ( current_state > AppState::RUNNING );
 
 				goto CONTINUE_RENDER_LOOP;
 			}

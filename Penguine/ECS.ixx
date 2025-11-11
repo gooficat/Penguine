@@ -63,9 +63,9 @@ public:
 	}
 
 	template<typename T>
-	std::shared_ptr<T> RegisterSystem()
+	void RegisterSystem()
 	{
-		return system_manager->RegisterSystem<T>();
+		system_manager->RegisterSystem<T>();
 	}
 
 	template<typename T>
@@ -75,7 +75,7 @@ public:
 	}
 
 	template<typename T>
-	std::shared_ptr<T>& RetrieveSystem()
+	std::shared_ptr<T> RetrieveSystem()
 	{
 		return system_manager->RetrieveSystem<T>();
 	}
@@ -83,4 +83,5 @@ private:
 	std::unique_ptr<EntityManager> entity_manager;
 	std::unique_ptr<ComponentManager> component_manager;
 	std::unique_ptr<SystemManager> system_manager;
+
 };

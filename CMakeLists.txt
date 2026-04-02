@@ -10,6 +10,6 @@ set(CMAKE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/*.cxx)
 add_library(Penguine ${SOURCES})
-target_include_directories(Penguine PRIVATE ${CMAKE_SOURCE_DIR})
+target_include_directories(Penguine PUBLIC ${CMAKE_SOURCE_DIR})
 
 set(CMAKE_BUILD_TYPE Debug)

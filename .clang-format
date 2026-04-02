@@ -3,3 +3,4 @@ BasedOnStyle: Microsoft
 UseTab: Always
 AlignConsecutiveDeclarations: true
 AlignConsecutiveAssignments: true
+AlwaysBreakTemplateDeclarations: Yes

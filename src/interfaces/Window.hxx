@@ -37,6 +37,7 @@ class Window
   private:
 #ifdef _WIN32
 	HWND m_hwnd;
+	void CreateFakeWindow(const Spec &spec);
 #endif
 	static Window *m_instance;
 

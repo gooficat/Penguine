@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(Penguine CXX)
+project(Penguine CXX C)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -8,7 +8,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/*.cxx)
+file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS ${CMAKE_SOURCE_DIR}/*.cxx ${CMAKE_SOURCE_DIR}/*.c)
 add_library(Penguine ${SOURCES})
 target_include_directories(Penguine PUBLIC ${CMAKE_SOURCE_DIR})
 

@@ -1,5 +1,6 @@
 #include "InputHandler.hxx"
 #include <Windows.h>
+#include <winuser.h>
 
 namespace Penguine
 {
@@ -13,17 +14,20 @@ LRESULT CALLBACK InputHandler::Proc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM 
 	switch (uMsg)
 	{
 	case WM_KEYDOWN:
-		m_instance->Keys[wParam] = true;
+		m_instance->m_Keys[wParam] = true;
 		return 0;
 	case WM_KEYUP:
-		m_instance->Keys[wParam] = false;
+		m_instance->m_Keys[wParam] = false;
+		return 0;
+	case WM_CLOSE:
+		m_instance->m_ShouldClose = true;
 		return 0;
 	default:
 		return DefWindowProcA(hWnd, uMsg, wParam, lParam);
 	}
 }
 
-InputHandler::InputHandler()
+InputHandler::InputHandler() : m_ShouldClose(false)
 {
 	m_instance = this;
 }
@@ -44,7 +48,7 @@ bool InputHandler::IsMouseButtonDown(int button) const
 
 bool InputHandler::ShouldClose() const
 {
-	return false;
+	return m_ShouldClose;
 }
 
 void InputHandler::Update()
@@ -59,7 +63,7 @@ void InputHandler::Update()
 
 const Mathematics::Vec<double, 2> &InputHandler::GetMousePosition() const
 {
-	return MousePos;
+	return m_MousePos;
 }
 
 } // namespace Interfaces

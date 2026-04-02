@@ -1,0 +1,4 @@
+If:
+  PathMatch: src/third_party/*.c
+Index:
+  Background: Skip

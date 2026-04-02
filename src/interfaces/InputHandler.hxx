@@ -84,8 +84,9 @@ class InputHandler
   private:
 	friend class Window;
 
-	bool						Keys[256];
-	Mathematics::Vec<double, 2> MousePos;
+	bool						m_Keys[256];
+	Mathematics::Vec<double, 2> m_MousePos;
+	bool						m_ShouldClose;
 
 	void ReceiveEvent();
 };

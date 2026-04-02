@@ -31,5 +31,15 @@ class Vec
 	T data[N];
 };
 
+template <typename T, std::size_t N1, std::size_t N2>
+class Mat : public Vec<Vec<T, N2>, N1>
+{
+  public:
+	Mat(const Vec<Vec<T, N2>, N1> &arr) : Vec<Vec<T, N2>, N1>(arr)
+	{
+	}
+	Mat() = default;
+};
+
 } // namespace Mathematics
 } // namespace Penguine

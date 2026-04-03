@@ -1,6 +1,6 @@
 #pragma once
 
-#include "mathematics/Vec.hxx"
+#include "mathematics/Math.hxx"
 #include <Windows.h>
 namespace Penguine
 {

@@ -5,7 +5,7 @@
 
 #include "GL.hxx"
 #include "Shader.hxx"
-#include "mathematics/Vec.hxx"
+#include "mathematics/Math.hxx"
 
 namespace Penguine
 {

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "GL.hxx"
-#include "mathematics/Vec.hxx"
+#include "mathematics/Math.hxx"
 #include <string>
 
 namespace Penguine

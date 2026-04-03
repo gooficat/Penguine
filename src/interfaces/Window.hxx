@@ -11,7 +11,7 @@
 #include <cstdint>
 #include <minwindef.h>
 
-#include "mathematics/Vec.hxx"
+#include "mathematics/Math.hxx"
 
 namespace Penguine
 {

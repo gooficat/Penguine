@@ -1,7 +1,7 @@
 #include "Renderer.hxx"
 
 #include "interfaces/Window.hxx"
-#include "mathematics/Vec.hxx"
+#include "mathematics/Math.hxx"
 #include "rendering/GL.hxx"
 #include <Windows.h>
 #include <stdexcept>

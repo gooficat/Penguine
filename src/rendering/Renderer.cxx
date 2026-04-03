@@ -18,7 +18,7 @@ Renderer::Renderer(const Math::Vec<std::uint16_t, 2> &size)
 {
 	LoadGLExts();
 	GL::Load();
-	GL::ClearColor(0.3f, 0.5f, 0.7f, 1.0f);
+	GL::ClearColor(0.2f, 0.2f, 0.2f, 1.0f);
 	GL::Viewport(0, 0, size[0], size[1]);
 }
 
@@ -26,7 +26,7 @@ Renderer::~Renderer()
 {
 }
 
-void Renderer::Render()
+void Renderer::Clear()
 {
 	GL::Clear(GL::COLOR_BUFFER_BIT);
 }

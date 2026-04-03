@@ -12,7 +12,7 @@ class Renderer
   public:
 	Renderer(const Math::Vec<std::uint16_t, 2> &size);
 	~Renderer();
-	void Render();
+	void Clear();
 
   private:
 	void LoadGLExts();

@@ -2,7 +2,6 @@
 
 #include <cstdint>
 #include <initializer_list>
-#include <vector>
 
 #include "GL.hxx"
 #include "Shader.hxx"

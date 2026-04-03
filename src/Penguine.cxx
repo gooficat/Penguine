@@ -11,10 +11,12 @@ Application::Application(const Interfaces::Window::Spec &window_spec) : window(w
 
 void Application::Run()
 {
+	window.Show();
 	while (input_handler.ShouldClose() == false)
 	{
-		window.Update();
 		renderer.Render();
+		Update(0.0f);
+		window.Update();
 		input_handler.Update();
 	}
 }

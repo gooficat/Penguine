@@ -81,9 +81,9 @@ class InputHandler
 
 	static InputHandler *m_instance;
 
-  private:
 	friend class Window;
 
+  private:
 	bool						m_Keys[256];
 	Mathematics::Vec<double, 2> m_MousePos;
 	bool						m_ShouldClose;

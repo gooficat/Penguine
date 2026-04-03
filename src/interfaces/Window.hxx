@@ -1,5 +1,6 @@
 #pragma once
 
+#include "rendering/Renderer.hxx"
 #include <string>
 #ifdef _WIN32
 #include <Windows.h>
@@ -34,14 +35,12 @@ class Window
 
 	void Update();
 
-  private:
-#ifdef _WIN32
-	HWND m_hwnd;
-	void CreateFakeWindow(const Spec &spec);
-#endif
-	static Window *m_instance;
-
 	friend class InputHandler;
+	friend class Rendering::Renderer;
+
+  private:
+	HWND		   m_hwnd;
+	static Window *m_instance;
 };
 } // namespace Interfaces
 } // namespace Penguine

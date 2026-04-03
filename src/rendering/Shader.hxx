@@ -1,7 +1,7 @@
 #pragma once
 
+#include "GL.hxx"
 #include "mathematics/Vec.hxx"
-#include "third_party/glad/gl.h"
 #include <string>
 
 namespace Penguine
@@ -17,9 +17,9 @@ class Shader
 	void Use() const;
 
 	void SetBool(const std::string &name, bool value) const;
-	void SetInt(const std::string &name, GLint value) const;
-	void SetUInt(const std::string &name, GLuint value) const;
-	void SetFloat(const std::string &name, GLfloat value) const;
+	void SetInt(const std::string &name, GL::Int value) const;
+	void SetUInt(const std::string &name, GL::Uint value) const;
+	void SetFloat(const std::string &name, GL::Float value) const;
 	void SetVec(const std::string &name, Mathematics::Vec<float, 2> value) const;
 	void SetVec(const std::string &name, Mathematics::Vec<float, 3> value) const;
 	void SetVec(const std::string &name, Mathematics::Vec<float, 4> value) const;
@@ -28,8 +28,8 @@ class Shader
 	void SetMat(const std::string &name, Mathematics::Mat<float, 4, 4> value) const;
 
   private:
-	GLuint ID;
-	GLuint CompileShader(const std::string &source, GLenum type);
+	GL::Uint ID;
+	GL::Uint CompileShader(const std::string &source, GL::Enum type);
 };
 } // namespace Rendering
 } // namespace Penguine

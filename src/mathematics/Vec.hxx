@@ -39,6 +39,10 @@ class Mat : public Vec<Vec<T, N2>, N1>
 	{
 	}
 	Mat() = default;
+	const T &Get() const
+	{
+		return Vec<Vec<T, N2>, N1>::Get().Get();
+	}
 };
 
 } // namespace Mathematics

@@ -12,6 +12,7 @@ class Renderer
 	void Render();
 
   private:
+	void LoadGLExts();
 };
 } // namespace Rendering
 } // namespace Penguine

@@ -4,3 +4,7 @@ UseTab: Always
 AlignConsecutiveDeclarations: true
 AlignConsecutiveAssignments: true
 AlwaysBreakTemplateDeclarations: Yes
+BinPackParameters: false
+BinPackArguments: false
+AllowAllParametersOfDeclarationOnNextLine: true
+AllowAllArgumentsOnNextLine: true

@@ -14,6 +14,8 @@ class Application
 
 	void Run();
 
+	virtual void Update(float deltaTime) = 0;
+
   protected:
 	Interfaces::Window		 window;
 	Rendering::Renderer		 renderer;

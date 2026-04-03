@@ -61,7 +61,7 @@ void InputHandler::Update()
 	}
 }
 
-const Mathematics::Vec<double, 2> &InputHandler::GetMousePosition() const
+const Math::Vec<double, 2> &InputHandler::GetMousePosition() const
 {
 	return m_MousePos;
 }

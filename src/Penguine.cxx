@@ -5,7 +5,8 @@
 namespace Penguine
 {
 
-Application::Application(const Interfaces::Window::Spec &window_spec) : window(window_spec), renderer(), input_handler()
+Application::Application(const Interfaces::Window::Spec &window_spec)
+	: window(window_spec), renderer(window_spec.size), input_handler()
 {
 }
 

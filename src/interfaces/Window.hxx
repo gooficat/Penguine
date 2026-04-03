@@ -23,9 +23,9 @@ class Window
 	class Spec
 	{
 	  public:
-		Mathematics::Vec<std::uint16_t, 2> size;
-		bool							   full_screen;
-		std::string						   title;
+		Math::Vec<std::uint16_t, 2> size;
+		bool						full_screen;
+		std::string					title;
 	};
 
 	Window(const Spec &spec);

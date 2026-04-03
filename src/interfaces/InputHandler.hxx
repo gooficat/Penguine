@@ -75,7 +75,7 @@ class InputHandler
 	bool IsMouseButtonDown(int button) const;
 	bool ShouldClose() const;
 
-	const Mathematics::Vec<double, 2> &GetMousePosition() const;
+	const Math::Vec<double, 2> &GetMousePosition() const;
 
 	static LRESULT CALLBACK Proc(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lParam);
 
@@ -84,9 +84,9 @@ class InputHandler
 	friend class Window;
 
   private:
-	bool						m_Keys[256];
-	Mathematics::Vec<double, 2> m_MousePos;
-	bool						m_ShouldClose;
+	bool				 m_Keys[256];
+	Math::Vec<double, 2> m_MousePos;
+	bool				 m_ShouldClose;
 
 	void ReceiveEvent();
 };

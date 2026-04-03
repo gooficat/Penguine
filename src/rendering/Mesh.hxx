@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <initializer_list>
 #include <vector>
 
 #include "GL.hxx"
@@ -14,26 +15,40 @@ namespace Rendering
 class Vertex
 {
   public:
-	Mathematics::Vec<float, 3> position;
-	Mathematics::Vec<float, 3> normal;
-	Mathematics::Vec<float, 2> uv;
+	Math::Vec3F position;
+	Math::Vec3F normal;
+	Math::Vec2F uv;
+
+	Vertex() = default;
+	Vertex(std::initializer_list<float> p, std::initializer_list<float> n, std::initializer_list<float> u)
+		: position(p), normal(n), uv(u)
+	{
+	}
+	Vertex(const Vertex &)			  = default;
+	Vertex &operator=(const Vertex &) = default;
 };
 
 class Face
 {
   public:
-	Mathematics::Vec<std::uint32_t, 3> indices;
+	Math::Vec3I indices;
+	Face(std::initializer_list<std::int32_t> i) : indices(i)
+	{
+	}
+	Face()						  = default;
+	Face(const Face &)			  = default;
+	Face &operator=(const Face &) = default;
 };
 
 class Mesh
 {
   public:
-	Mesh(const std::vector<Vertex> &vertices, const std::vector<Face> &faces);
+	Mesh(std::initializer_list<Vertex> vertices, std::initializer_list<Face> faces);
 
 	void Draw(const Shader &shader) const;
 
   private:
-	void GenBuffers(const std::vector<Vertex> &vertices, const std::vector<Face> &faces);
+	void GenBuffers(std::initializer_list<Vertex> vertices, std::initializer_list<Face> faces);
 
 	GL::Uint m_vao, m_vbo, m_ebo;
 };
